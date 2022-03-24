@@ -6,4 +6,5 @@ export const ItemContainer = styled.div`
   align-items: center;
   text-align: center;
   font-size: 2rem;
+  
 `;
