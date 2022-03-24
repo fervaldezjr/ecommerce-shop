@@ -5,6 +5,7 @@ import { navbarData } from "./components/Navbar/NavbarData";
 import Sidebar from "./components/Sidebar/Sidebar";
 import ItemListContainer from "./components/ItemsListContainer/ItemListContainer";
 import ItemCount from "./components/ItemCount/ItemCount";
+import ItemList from "./components/ItemList/ItemList";
 
 function App() {
   const [isOpen, setIsOpen] = useState(false);
@@ -26,6 +27,7 @@ function App() {
       <Sidebar isOpen={isOpen} toggle={toggle} />
       <ItemListContainer title="Greeting con props 👋🏽" />
       <ItemCount stock={stock} initial={initial} onAdd={onAdd} />
+      <ItemList />
     </div>
   );
 }
