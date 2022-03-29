@@ -6,6 +6,7 @@ import Sidebar from "./components/Sidebar/Sidebar";
 import ItemListContainer from "./components/ItemsListContainer/ItemListContainer";
 import ItemCount from "./components/ItemCount/ItemCount";
 import ItemList from "./components/ItemList/ItemList";
+import ItemDetailContainer from "./components/ItemDetailContainer/ItemDetailContainer";
 
 function App() {
   const [isOpen, setIsOpen] = useState(false);
@@ -21,13 +22,15 @@ function App() {
     console.log(contador);
   };
 
+  const saludo = "Greeting con props 👋🏽";
   return (
     <div className="App">
       <Navbar {...navbarData} toggle={toggle} />
       <Sidebar isOpen={isOpen} toggle={toggle} />
-      <ItemListContainer title="Greeting con props 👋🏽" />
+      <ItemListContainer title={saludo} />
       <ItemCount stock={stock} initial={initial} onAdd={onAdd} />
       <ItemList />
+      <ItemDetailContainer />
     </div>
   );
 }
