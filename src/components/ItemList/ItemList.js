@@ -45,7 +45,7 @@ const ItemList = () => {
   promesa2();
 
   return (
-    <>
+    <div className="contenedorItem">
       {stockData.map((item) => {
         return (
           <Item
@@ -55,7 +55,7 @@ const ItemList = () => {
           />
         );
       })}
-    </>
+    </div>
   );
 };
 
