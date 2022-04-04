@@ -5,7 +5,7 @@ import { Card, CardBody, CardImg, CardText, CardTitle } from "./Item.styles"
 export const Item = ( {id, name, description, img, precio} ) => {
 
     return (
-        <Card style={{ width: '16rem', margin: '12px' }}>
+        <Card>
             <CardImg src={img} alt={name}/>
             <CardBody>
                 <CardTitle>{name}</CardTitle>

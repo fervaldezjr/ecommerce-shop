@@ -1,7 +1,8 @@
 import ItemList from "../ItemList/ItemList";
 import { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
-import { pedirDatos } from "../../helpers/pedirDatos";
+import { getProducts } from "../../mocks/FakeApi";
+import { Loading } from "./ItemListContainer.styles";
 
 const ItemListContainer = () => {
     
@@ -13,7 +14,7 @@ const ItemListContainer = () => {
     useEffect( () => {
         setLoading(true)
 
-        pedirDatos()
+        getProducts
             .then((res) => {
                 if (categoryId) {
                     setProductos( res.filter( (prod) => prod.category === categoryId ) )
@@ -34,7 +35,7 @@ const ItemListContainer = () => {
         <>
             {
                 loading 
-                    ? <h2>Loading...</h2> 
+                    ? <Loading>Loading...</Loading> 
                     : <ItemList productos={productos}/>
             } 
         </>

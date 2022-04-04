@@ -1,4 +1,4 @@
-export const productos = [
+const productos = [
   {
     id: "01",
     name: "random1",
@@ -48,3 +48,15 @@ export const productos = [
     stock: "05",
   },
 ];
+
+export const getProducts = new Promise((resolve, reject) => {
+  let condition = true;
+
+  if (condition) {
+    setTimeout(() => {
+      resolve(productos);
+    }, 3000);
+  } else {
+    reject("se pudrio todo");
+  }
+});
