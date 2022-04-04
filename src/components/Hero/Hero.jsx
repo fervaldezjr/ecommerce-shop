@@ -30,7 +30,7 @@ const Hero = () => {
         <HeroH1>Encuentra las últimas tendencias</HeroH1>
         <HeroP>
           <Button
-            to="proyects"
+            to="/category/all"
             onMouseEnter={onHover}
             onMouseLeave={onHover}
             primary="true"

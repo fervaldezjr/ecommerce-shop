@@ -1,15 +1,22 @@
-import React from "react";
+import { Link } from "react-router-dom"
+import { Button } from "../Button.styles"
+import { Card, CardBody, CardImg, CardText, CardTitle } from "./Item.styles"
 
-const Item = ({ imagen, nombre, precio }) => {
-  return (
-    <div className="contenedorProducto">
-      <div>
-        <img src={imagen} alt={nombre} />
-        <h2>{nombre}</h2>
-        <h3>{precio}</h3>
-      </div>
-    </div>
-  );
-};
+export const Item = ( {id, name, description, img, precio} ) => {
 
-export default Item;
+    return (
+        <Card style={{ width: '16rem', margin: '12px' }}>
+            <CardImg src={img} alt={name}/>
+            <CardBody>
+                <CardTitle>{name}</CardTitle>
+                <CardText>
+                    {description}
+                </CardText>
+                <CardText>
+                    Precio: ${precio}
+                </CardText>
+                <Link to={`/detail/${id}`}><Button>Ver más</Button></Link>
+            </CardBody>
+        </Card>
+    )
+}

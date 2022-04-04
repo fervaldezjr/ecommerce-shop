@@ -1,29 +1,44 @@
-import { getProducts } from "../../mocks/FakeApi";
 import ItemList from "../ItemList/ItemList";
 import { useState, useEffect } from "react";
+import { useParams } from "react-router-dom";
+import { pedirDatos } from "../../helpers/pedirDatos";
 
-const ItemListContainer = ({ saludo }) => {
-  const [listaProductos, setListaProductos] = useState([]);
-  const [cargando, setCargando] = useState(false);
-  // console.Log (getProducts)
-  useEffect(() => {
-    setCargando(true);
-    getProducts
-      .then((res) => setListaProductos(res))
-      .catch((error) => console.log(error))
-      .finally(() => setCargando(false));
-  }, []);
+const ItemListContainer = () => {
+    
+    const [productos, setProductos] = useState([])
+    const [loading, setLoading] = useState(false)
 
-  return (
-    <div>
-      <h1>{saludo}</h1>
-      {cargando ? (
-        <p>Cargando...</p>
-      ) : (
-        <ItemList listaProductos={listaProductos} />
-      )}
-    </div>
-  );
-};
+    const { categoryId } = useParams()
 
-export default ItemListContainer;
+    useEffect( () => {
+        setLoading(true)
+
+        pedirDatos()
+            .then((res) => {
+                if (categoryId) {
+                    setProductos( res.filter( (prod) => prod.category === categoryId ) )
+                } else {
+                    setProductos( res )
+                }
+            })
+            .catch((err) => {
+                console.log(err)
+            })
+            .finally(() => {
+               setLoading(false)
+            })
+
+    }, [categoryId])
+
+    return (
+        <>
+            {
+                loading 
+                    ? <h2>Loading...</h2> 
+                    : <ItemList productos={productos}/>
+            } 
+        </>
+    )
+}
+
+export default ItemListContainer
