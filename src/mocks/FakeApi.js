@@ -1,7 +1,7 @@
 const listaProductos = [
   {
     id: "01",
-    name: "random1",
+    name: "Remeras",
     description: "sarasa",
     img: "https://picsum.photos/200",
     precio: "300",
@@ -10,7 +10,7 @@ const listaProductos = [
   },
   {
     id: "02",
-    name: "random2",
+    name: "Remeras",
     description: "sarasa",
     img: "https://picsum.photos/201",
     precio: "300",
@@ -19,7 +19,7 @@ const listaProductos = [
   },
   {
     id: "03",
-    name: "random3",
+    name: "Jeans",
     description: "sarasa",
     img: "https://picsum.photos/202",
     precio: "300",
@@ -28,7 +28,7 @@ const listaProductos = [
   },
   {
     id: "04",
-    name: "random4",
+    name: "Jeans",
     description: "sarasa",
     img: "https://picsum.photos/203",
     precio: "300",
@@ -37,7 +37,7 @@ const listaProductos = [
   },
   {
     id: "05",
-    name: "random5",
+    name: "Zapatillas",
     description: "sarasa",
     img: "https://picsum.photos/204",
     precio: "300",
@@ -46,7 +46,7 @@ const listaProductos = [
   },
   {
     id: "06",
-    name: "random6",
+    name: "Zapatillas",
     description: "sarasa",
     img: "https://picsum.photos/205",
     precio: "300",
@@ -61,7 +61,7 @@ export const getProducts = new Promise((resolve, reject) => {
   if (condition) {
     setTimeout(() => {
       resolve(listaProductos);
-    }, 2000);
+    }, 3500);
   } else {
     reject("se pudrio todo");
   }

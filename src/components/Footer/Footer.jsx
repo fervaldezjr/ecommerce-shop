@@ -3,7 +3,7 @@ import { FooterContainer } from './Footer.styles'
 
 const Footer = () => {
   return (
-    <FooterContainer>Footer</FooterContainer>
+    <FooterContainer>Desarrollado por Fernando Valdez</FooterContainer>
   )
 }
 

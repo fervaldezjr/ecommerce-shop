@@ -7,3 +7,9 @@ export const ItemListContenedor = styled.div`
 export const Loading = styled.div`
   background-color: red;
 `;
+
+export const ItemContainer = styled.div`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+`;

@@ -1,11 +1,14 @@
+import { ItemText, Card, CardImg, ItemPrecio } from "./Item.styles"
+
 const Item = ({producto}) => {
     return (
-      <div className="card" style={{width:'18rem'}}>
-      <img src={producto.img} className="card-img-top" alt={producto.name}/>
+      <Card >
+      <CardImg src={producto.img} className="card-img-top" alt={producto.name}/>
       <div className="card-body">
-          <p className="card-text">{producto.name}</p>
+          <ItemText>{producto.name}</ItemText>
+          <ItemPrecio>{producto.precio} EUR</ItemPrecio>
       </div>
-  </div>
+  </Card>
     )
   }
   

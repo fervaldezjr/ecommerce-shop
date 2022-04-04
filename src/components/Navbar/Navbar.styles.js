@@ -2,9 +2,8 @@ import styled from "styled-components";
 import { Link, Link as LinkR } from "react-router-dom";
 
 export const Nav = styled.nav`
-  background: #000;
+  background: #fff;
   height: 80px;
-  margin-top: -80px;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -30,7 +29,7 @@ export const NavbarContainer = styled.div`
 `;
 
 export const NavLogo = styled(LinkR)`
-  color: #fff;
+  color: black;
   justify-self: flex-start;
   cursor: pointer;
   font-size: 1.5rem;
@@ -55,13 +54,13 @@ export const NavItem = styled.li`
 `;
 
 export const NavLinks = styled(Link)`
-  color: #fff;
+  color: black;
   display: flex;
   align-items: center;
   text-decoration: none;
   padding: 0 1rem;
   height: 100%;
-  font-weight: bold;
+  font-weight: 400;
   font-size: 18px;
   cursor: pointer;
 
@@ -84,7 +83,7 @@ export const NavBtnLink = styled(LinkR)`
   border-radius: 50px;
   white-space: nowrap;
   padding: 12px;
-  color: #fff;
+  color: black;
   font-size: 21px;
   outline: none;
   border: none;

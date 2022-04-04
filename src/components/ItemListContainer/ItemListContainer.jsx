@@ -2,7 +2,7 @@ import ItemList from "../ItemList/ItemList";
 import { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 import { getProducts } from "../../mocks/FakeApi";
-import { Loading } from "./ItemListContainer.styles";
+import { Loading, ItemContainer } from "./ItemListContainer.styles";
 
 const ItemListContainer = () => {
     
@@ -32,13 +32,13 @@ const ItemListContainer = () => {
     }, [categoryId])
 
     return (
-        <>
+        <ItemContainer>
             {
                 loading 
                     ? <Loading>Loading...</Loading> 
                     : <ItemList productos={productos}/>
             } 
-        </>
+        </ItemContainer>
     )
 }
 
