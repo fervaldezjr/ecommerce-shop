@@ -7,7 +7,7 @@ import { Loading } from "./ItemListContainer.styles";
 const ItemListContainer = () => {
     
     const [productos, setProductos] = useState([])
-    const [loading, setLoading] = useState(false)
+    const [loading, setLoading] = useState(true)
 
     const { categoryId } = useParams()
 

@@ -1,4 +1,4 @@
-const productos = [
+const listaProductos = [
   {
     id: "01",
     name: "random1",
@@ -6,6 +6,7 @@ const productos = [
     img: "https://picsum.photos/200",
     precio: "300",
     stock: "02",
+    category: "remeras",
   },
   {
     id: "02",
@@ -14,6 +15,7 @@ const productos = [
     img: "https://picsum.photos/201",
     precio: "300",
     stock: "10",
+    category: "remeras",
   },
   {
     id: "03",
@@ -22,6 +24,7 @@ const productos = [
     img: "https://picsum.photos/202",
     precio: "300",
     stock: "05",
+    category: "jeans",
   },
   {
     id: "04",
@@ -30,6 +33,7 @@ const productos = [
     img: "https://picsum.photos/203",
     precio: "300",
     stock: "03",
+    category: "jeans",
   },
   {
     id: "05",
@@ -38,6 +42,7 @@ const productos = [
     img: "https://picsum.photos/204",
     precio: "300",
     stock: "07",
+    category: "zapatillas",
   },
   {
     id: "06",
@@ -46,6 +51,7 @@ const productos = [
     img: "https://picsum.photos/205",
     precio: "300",
     stock: "05",
+    category: "zapatillas",
   },
 ];
 
@@ -54,8 +60,8 @@ export const getProducts = new Promise((resolve, reject) => {
 
   if (condition) {
     setTimeout(() => {
-      resolve(productos);
-    }, 3000);
+      resolve(listaProductos);
+    }, 2000);
   } else {
     reject("se pudrio todo");
   }

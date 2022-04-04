@@ -6,8 +6,4 @@ export const ItemListContenedor = styled.div`
 
 export const Loading = styled.div`
   background-color: red;
-  position: absolute;
-  top: 50%;
-
-  margin-top: 2rem;
 `;

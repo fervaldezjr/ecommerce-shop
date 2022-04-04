@@ -2,8 +2,6 @@ import styled from "styled-components";
 
 export const Card = styled.div`
   background-color: red;
-  position: absolute;
-  top: 50%;
 `;
 export const CardImg = styled.img`
   background-color: red;
