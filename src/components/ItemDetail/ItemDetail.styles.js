@@ -27,9 +27,15 @@ export const DetailText = styled.div`
 `;
 
 export const DetailName = styled.h2`
-  margin: 2rem 0;
+  margin: 1rem 0;
   font-weight: 500;
   font-size: 21px;
+  text-transform: uppercase;
+`;
+
+export const DetailStock = styled.p`
+  font-size: 14px;
+  font-weight: 400;
   text-transform: uppercase;
 `;
 export const DetailPrice = styled.p`
