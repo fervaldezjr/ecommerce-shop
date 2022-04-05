@@ -1,13 +1,29 @@
 import React from "react";
+import { useNavigate } from "react-router-dom";
+import ItemCount from "../ItemCount/ItemCount";
+import { DetailContainer, DetailText, Back, DetailImage, DetailDescription, DetailName, DetailPrice } from "./ItemDetail.styles";
 
 const ItemDetail = ({ productDetail }) => {
-  const { name, description, img } = productDetail;
+  const { name, description, img, precio } = productDetail;
+
+  const navigate = useNavigate()
+
+  const handleNavigate = () => {
+    navigate(-1)
+  }
 
   return (
     <>
-      <h2>Detalle del producto: {name}</h2>
-      <img src={img} alt={name} />
-      <p>{description}</p>
+    <Back onClick={handleNavigate}/>
+    <DetailContainer>
+      <DetailImage src={img} alt={name} />
+      <DetailText>
+        <DetailName>{name}</DetailName>
+        <DetailDescription>{description}</DetailDescription>
+        <DetailPrice>{precio} EUR</DetailPrice>
+        <ItemCount />
+      </DetailText>
+    </DetailContainer>
     </>
   );
 };

@@ -15,7 +15,6 @@ function App() {
         <Route path="/" element={<Hero />} />
         <Route path="/category/:categoryId" element={<ItemListContainer />} />
         <Route path="/category" element={<ItemListContainer />} />
-
         <Route path="/detail/:itemId" element={<ItemDetailContainer />} />
         <Route path="*" element={<Navigate to="/" />} />
       </Routes>

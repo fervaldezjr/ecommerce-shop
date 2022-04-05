@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import styled from "styled-components";
 
 export const Card = styled.div`
@@ -18,6 +19,14 @@ export const CardBody = styled.div`
 export const CardTitle = styled.h3`
   background-color: red;
 `;
+
+export const ItemTextContainer = styled.div`
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  width: 100%;
+`;
+
 export const ItemText = styled.p`
   padding: 7px 0;
   margin: 0;
@@ -32,6 +41,10 @@ export const ItemPrecio = styled.p`
   font-weight: 400;
   font-size: 14px;
 `;
-export const Button = styled.button`
-  background-color: red;
+export const ViewDetail = styled(Link)`
+  padding: 7px 0;
+  text-decoration: none;
+  color: black;
+  text-transform: uppercase;
+  font-size: 14px;
 `;
