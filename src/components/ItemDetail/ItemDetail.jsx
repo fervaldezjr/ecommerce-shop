@@ -1,9 +1,12 @@
-import React, { useState } from "react";
-import { useNavigate } from "react-router-dom";
+import React, { useContext, useState } from "react";
+import { Link, useNavigate } from "react-router-dom";
 import ItemCount from "../ItemCount/ItemCount";
+import {CartContext} from "../../context/CartContext"
 import { DetailContainer, DetailText, Back, DetailImage, DetailDescription, DetailName, DetailPrice, DetailStock } from "./ItemDetail.styles";
 
 const ItemDetail = ({ productDetail }) => {
+  const {addItem, isInCart} = useContext(CartContext)
+
   const { name, description, img, precio, stock, id } = productDetail;
   const [cantidad, setCantidad] = useState(1)
 
@@ -22,7 +25,7 @@ const ItemDetail = ({ productDetail }) => {
       cantidad
     }
 
-    console.log(itemToAdd)
+    addItem(itemToAdd)
   }
 
   return (
@@ -35,7 +38,14 @@ const ItemDetail = ({ productDetail }) => {
         <DetailStock>Productos disponibles: {stock}</DetailStock>
         <DetailDescription>{description}</DetailDescription>
         <DetailPrice>{precio} EUR</DetailPrice>
-        <ItemCount max={stock} onAdd={addToCart} cantidad={cantidad} setCantidad={setCantidad}/>
+        {!isInCart(id) 
+        ? <ItemCount 
+        max={stock} 
+        onAdd={addToCart} 
+        cantidad={cantidad} 
+        setCantidad={setCantidad}/>
+        : <Link to="/cart">Terminar mi compra</Link>
+        }
       </DetailText>
     </DetailContainer>
     </>

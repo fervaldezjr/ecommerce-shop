@@ -1,11 +1,18 @@
 import { ContenedorCart, ContadorProductos, CartIcon } from "./Cart.styles"
+import { useContext } from "react"
+import { CartContext } from "../../context/CartContext"
 
 
 const CartWidget = () => {
-    return <ContenedorCart>
+
+    const {cartQuantity} = useContext(CartContext)
+
+    return(
+        <ContenedorCart to="/cart">
         <CartIcon />
-        <ContadorProductos>0</ContadorProductos>
+        <ContadorProductos>{cartQuantity()}</ContadorProductos>
     </ContenedorCart>
+    )
 }
 
 export default CartWidget

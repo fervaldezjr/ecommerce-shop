@@ -1,7 +1,8 @@
 import styled from "styled-components";
 import { BsBag } from "react-icons/bs";
+import { Link } from "react-router-dom";
 
-export const ContenedorCart = styled.div`
+export const ContenedorCart = styled(Link)`
   display: flex;
   justify-content: space-between;
   align-items: center;
