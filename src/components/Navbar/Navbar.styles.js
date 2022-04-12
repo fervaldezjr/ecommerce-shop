@@ -69,7 +69,7 @@ export const NavLinks = styled(Link)`
   }
 `;
 
-export const NavBtn = styled.nav`
+export const NavBtn = styled.div`
   display: flex;
   align-items: center;
 
@@ -77,7 +77,7 @@ export const NavBtn = styled.nav`
   }
 `;
 
-export const NavBtnLink = styled(LinkR)`
+export const NavBtnLink = styled.div`
   display: flex;
   align-items: center;
   border-radius: 50px;

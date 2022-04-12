@@ -11,12 +11,14 @@ export const ContenedorCart = styled(Link)`
 
 export const CartIcon = styled(BsBag)`
   margin-right: 10px;
+  font-size: 24px;
+  color: black;
 `;
 
-export const ContadorProductos = styled.p`
+export const ContadorProductos = styled.span`
   position: absolute;
   right: 8px;
-  top: -20px;
+  top: -10px;
   font-size: 13px;
   color: black;
   background-color: #fff;

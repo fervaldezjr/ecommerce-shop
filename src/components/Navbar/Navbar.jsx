@@ -8,7 +8,6 @@ import {
   NavItem,
   NavLinks,
   NavBtn,
-  NavBtnLink,
 } from "./Navbar.styles";
 
 const Navbar = () => {
@@ -29,9 +28,7 @@ const Navbar = () => {
             </NavItem>
           </NavMenu>
           <NavBtn>
-            <NavBtnLink to="/cart">
               <CartWidget />
-            </NavBtnLink>
           </NavBtn>
         </NavbarContainer>
       </Nav>
