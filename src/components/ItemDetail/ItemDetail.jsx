@@ -8,7 +8,7 @@ const ItemDetail = ({ productDetail }) => {
   const {addItem, isInCart} = useContext(CartContext)
 
   const { name, description, img, precio, stock, id } = productDetail;
-  const [cantidad, setCantidad] = useState(1)
+  const [cantidad, setCantidad] = useState(0)
 
   const navigate = useNavigate()
 
@@ -16,17 +16,17 @@ const ItemDetail = ({ productDetail }) => {
     navigate(-1)
   }
 
-  const addToCart = (cantidad) => {
-    const itemToAdd = {
-      id,
-      name,
-      precio,
-      img,
-      cantidad
-    }
+  const handleAdd = () => {
+    if (cantidad === 0) return
 
-    addItem(itemToAdd)
-  }
+    if (!isInCart(id)) {
+      const itemToAdd = {
+        id, name, precio, img, cantidad
+      }
+
+      addItem(itemToAdd)
+    }
+  };
 
   return (
     <>
@@ -41,7 +41,7 @@ const ItemDetail = ({ productDetail }) => {
         {!isInCart(id) 
         ? <ItemCount 
         max={stock} 
-        onAdd={addToCart} 
+        onAdd={handleAdd} 
         cantidad={cantidad} 
         setCantidad={setCantidad}/>
         : <Link to="/cart">Terminar mi compra</Link>
@@ -52,4 +52,4 @@ const ItemDetail = ({ productDetail }) => {
   );
 };
 
-export default ItemDetail;
+export default ItemDetail
